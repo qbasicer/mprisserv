@@ -113,6 +113,10 @@ void QHttpServer::readClient(){
 				//new MprisConnection(name
 				os << "<head>\r\n<title>MPRISServ</title>\r\n";
 				os << "<meta http-equiv=\"refresh\" content=\"30; url=/\">\r\n";
+				os << "<STYLE type=\"text/css\">\r\n";
+				os << "body{size: 12pt;}\r\n";
+				os << "</STYLE>\r\n";
+				os << "<meta name=\"viewport\" content=\"width=device-width\" />\r\n";
 				os << "</head>\r\n<body>\r\n";
 				os << "<h1>" << con.getPlayerName() << "</h1>\r\n";
 				os << "<h3>" << con.trackArtist() << "&nbsp;-&nbsp;" << con.trackTitle() << "</h3>\r\n";
