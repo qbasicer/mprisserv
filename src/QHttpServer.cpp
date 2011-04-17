@@ -114,7 +114,7 @@ void QHttpServer::readClient(){
 				os << "<head>\r\n<title>MPRISServ</title>\r\n";
 				os << "<meta http-equiv=\"refresh\" content=\"30; url=/\">\r\n";
 				os << "<STYLE type=\"text/css\">\r\n";
-				os << "body{size: 12pt;}\r\n";
+				os << "body{size: 12pt;font-family:\"Palatino Linotype\",Georgia,Serif;}\r\n";
 				os << "</STYLE>\r\n";
 				os << "<meta name=\"viewport\" content=\"width=device-width\" />\r\n";
 				os << "</head>\r\n<body>\r\n";
