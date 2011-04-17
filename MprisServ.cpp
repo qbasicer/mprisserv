@@ -25,14 +25,13 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-	//QApplication a( argc, argv );
 	QCoreApplication a(argc, argv);
-	QEventLoop *qel = new QEventLoop();
 	
+	// Register structures with QDBus
 	MprisConnection::init();
 	
+	// Change this to listen on another port.
 	QHttpServer srv(3834);
-	
 	
 	a.exec();
 }
