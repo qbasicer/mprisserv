@@ -1,0 +1,8 @@
+What is MPRISServ?
+------------------
+
+MPRISServ is a small HTTP server that lets you connect to any MPRIS aware
+application that is currently connected through D-BUS to change it's
+playback state.  It gives the user the ability to play/pause/stop and
+change the track.  Designed for Clementine, it should work for any MPRIS
+program.

@@ -1,0 +1,55 @@
+AC_INIT(qzdl,0.1)
+AC_CONFIG_HEADERS(config.h)
+AC_PROG_CC
+AC_PROG_CXX
+
+AC_MSG_CHECKING(qmake project building)
+bnv_try_1="qmake -project -o mprisserv.pro"
+AC_TRY_EVAL(bnv_try_1)
+if test "$ac_status" != 0; then
+   AC_MSG_ERROR(qmake not available)
+fi
+AC_MSG_RESULT(yes)
+
+AC_MSG_CHECKING(setting project options)
+bnv_try_15="echo \"QT += dbus network\" >> mprisserv.pro"
+AC_TRY_EVAL(bnv_try_15)
+if test "$ac_status" != 0; then
+   AC_MSG_ERROR(error appending to file)
+fi
+AC_MSG_RESULT(yes)
+
+AC_MSG_CHECKING(enabling debug)
+bnv_try_15="echo \"config += debug\" >> mprisserv.pro"
+AC_TRY_EVAL(bnv_try_15)
+if test "$ac_status" != 0; then
+   AC_MSG_ERROR(error appending to file)
+fi
+AC_MSG_RESULT(yes)
+
+AC_MSG_CHECKING(setting moc location)
+bnv_try_15="echo \"MOC_DIR = obj/\" >> mprisserv.pro"
+AC_TRY_EVAL(bnv_try_15)
+if test "$ac_status" != 0; then
+   AC_MSG_ERROR(error appending to file)
+fi
+AC_MSG_RESULT(yes)
+
+AC_MSG_CHECKING(setting obj location)
+bnv_try_15="echo \"OBJ_DIR = obj/\" >> mprisserv.pro"
+AC_TRY_EVAL(bnv_try_15)
+if test "$ac_status" != 0; then
+   AC_MSG_ERROR(error appending to file)
+fi
+AC_MSG_RESULT(yes)
+
+AC_MSG_CHECKING(Using qmake to build Makefile)
+bnv_try_2="qmake"
+AC_TRY_EVAL(bnv_try_2)
+if test "$ac_status" != 0; then
+   AC_MSG_ERROR(Cannot build Makefile)
+fi
+AC_MSG_RESULT(yes)
+
+AC_VERBOSE(You may now build MPRISServ with the make command)
+
